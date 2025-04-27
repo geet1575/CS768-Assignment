@@ -3,10 +3,8 @@
 ## Assignment: CS 768
 
 ### Notes:
-1. Evaluation files will be uploaded on 20th April. Work on your solutions until then.
-2. git clone this repository. It contains the dataset `dataset_papers.tar.gz`
-3. Revisit this repository on 21st April for updates.
-4. Work in teams according to your projects.
+1. git clone this repository. It contains the dataset `dataset_papers.tar.gz`
+2. Work in teams according to your projects.
 
 ### Setup
 In this assignment, we will work on a real world application, a problem that is naturally modelled as a graph.
