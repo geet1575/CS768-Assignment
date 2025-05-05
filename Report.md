@@ -53,3 +53,19 @@ Diameter = 11
 
 Histogram of degree of nodes (in log scale) -  
 ![Degree Histogram](plot.png)
+
+## Task 2 - 
+
+Model - Uses allenai/specter, a SentenceTransformer model trained specifically for scientific papers. Embeddings are computed using:
+
+embedding = SPECTER(title + abstract)  
+
+### Cosine Similarity Computation  
+Encodes the query title+abstract.  
+Computes cosine similarity with every node in the graph.  
+Sorts and prints top matches by similarity.
+
+### Other Approaches tried 
+- See all-tries branch for all this
+- Feature engineering on the graph model dataset (did not work since the new node has only title and abstract and this cannot be reduced to a link prediction mode) and time taken to train was too long
+- Transformer trained on the text to convert it into embeddings and used to solve a 0-1 link prediction model with Cross Entropy Loss (did not work because model was too big ~420 MB and takes way too long for training and inference)
