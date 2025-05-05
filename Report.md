@@ -1,4 +1,9 @@
 # CS 768 Assignment - 
+## Group - 
+Ekansh Ravi Shankar (22B1032)  
+Geet Singhi (22B1035)  
+Ved Danait (22B1818)  
+Tanmay Gejapati (22B0969)
 
 ## Task 1 - 
 
