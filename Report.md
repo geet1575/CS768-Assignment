@@ -68,6 +68,9 @@ embedding = SPECTER(title + abstract)
 ### Cosine Similarity Computation  
 Encodes the query title+abstract.  
 Computes cosine similarity with every node in the graph.  
+
+## Github Repository Link - 
+https://github.com/geet1575/CS768-Assignment
 Sorts and prints top matches by similarity.
 
 ### Other Approaches tried 
