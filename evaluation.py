@@ -99,8 +99,8 @@ def encode_train_embeddings(model, train_subgraph, id_to_title, id_to_abstract):
 
 def main():
     parser = argparse.ArgumentParser(description="SPECTER Model Training")
-    parser.add_argument('--title', type=str, required=True, help='Your title')
-    parser.add_argument('--abstract', type=str, required=True, help='Your abstract')
+    parser.add_argument('--test-paper-title', type=str, required=True, help='Your title')
+    parser.add_argument('--test-paper-abstract', type=str, required=True, help='Your abstract')
 
     seed_everything()
     graph, id_to_folder, id_to_title, id_to_abstract = load_graph_with_text()
@@ -110,7 +110,7 @@ def main():
     embeddings = encode_train_embeddings(specter, graph, id_to_title, id_to_abstract)
     # Get input from argparse
     args = parser.parse_args()
-    input_text = f"{args.title}. {args.abstract}"
+    input_text = f"{args.test_paper_title}. {args.test_paper_abstract}"
 
     # Encode the input query
     log("Encoding input title + abstract...")
@@ -128,9 +128,13 @@ def main():
 
     # Print results
     # print("\n=== Most Similar Papers ===")
+    paper_titles = []
     for node_id, score in similarities:
         # print(f"[{score:.4f}] ID: {node_id} | Title: {id_to_title.get(node_id, 'N/A')}")
-        print(f"{id_to_title.get(node_id, 'N/A')}")
+        # print(f"{id_to_title.get(node_id, 'N/A')}")
+        paper_titles.append(id_to_title.get(node_id, 'N/A'))
+
+    print('\n'.join(result))
 
 
 if __name__ == "__main__":
